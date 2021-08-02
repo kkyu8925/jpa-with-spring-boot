@@ -12,9 +12,9 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
 
             <!-- 옵션 -->
-            <property name="hibernate.show_sql" value="true"/> <!-- 실행시 쿼리 보임-->
-            <property name="hibernate.format_sql" value="true"/> <!-- 쿼리 포맷팅 -->
-            <property name="hibernate.use_sql_comments" value="true"/> <!-- 주석 옵션 -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
             <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
         </properties>
     </persistence-unit>
