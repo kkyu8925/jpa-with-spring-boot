@@ -15,7 +15,9 @@
             <property name="hibernate.show_sql" value="true"/> <!-- 실행시 쿼리 보임-->
             <property name="hibernate.format_sql" value="true"/> <!-- 쿼리 포맷팅 -->
             <property name="hibernate.use_sql_comments" value="true"/> <!-- 주석 옵션 -->
-            <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
+
+            <!-- 운영서버에서 create, update 사용하면 안된다.-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create" />--> <!-- DDL(Data Definition Language) 옵션 -->
         </properties>
     </persistence-unit>
 </persistence>
