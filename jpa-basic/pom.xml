@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jpa.book</groupId>
-    <artifactId>jpashop</artifactId>
+    <artifactId>jpa-basic</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

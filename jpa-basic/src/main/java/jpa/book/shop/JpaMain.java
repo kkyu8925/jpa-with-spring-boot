@@ -1,4 +1,4 @@
-package jpa.book.jpashop;
+package jpa.book.shop;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
