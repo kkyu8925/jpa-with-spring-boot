@@ -3,8 +3,8 @@ package jpa.book.shop.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "ORDERS")
+//@Entity
+//@Table(name = "ORDERS")
 public class Order {
 
     @Id

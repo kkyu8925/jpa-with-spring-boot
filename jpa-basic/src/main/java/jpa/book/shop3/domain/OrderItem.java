@@ -1,8 +1,8 @@
-package jpa.book.shop2.domain;
+package jpa.book.shop3.domain;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 public class OrderItem {
 
     @Id
