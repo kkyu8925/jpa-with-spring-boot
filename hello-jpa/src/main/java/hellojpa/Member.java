@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@Entity // JPA 가 객체를 관리
+//@Entity // JPA 가 객체를 관리
 // final 클래스, enum, interface, inner 클래스 사용X
 //@Table(name="MBA")
 public class Member {
