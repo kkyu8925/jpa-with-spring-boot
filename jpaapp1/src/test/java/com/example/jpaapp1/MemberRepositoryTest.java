@@ -16,7 +16,7 @@ class MemberRepositoryTest {
 
     @Test
     @Transactional
-//    @Rollback(value = false) // Test 클래스에 @Transactional 있으면 롤백함
+    @Rollback(value = false) // Test 클래스에 @Transactional 있으면 롤백함
     public void testMember() throws Exception {
         // given
         Member member = new Member();
