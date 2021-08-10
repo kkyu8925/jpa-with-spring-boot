@@ -8,9 +8,12 @@ import com.example.jpaapp1.domain.item.Item;
 import com.example.jpaapp1.repository.ItemRepository;
 import com.example.jpaapp1.repository.MemberRepository;
 import com.example.jpaapp1.repository.OrderRepository;
+import com.example.jpaapp1.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -61,4 +64,7 @@ public class OrderService {
     /**
      * 검색
      */
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 }
