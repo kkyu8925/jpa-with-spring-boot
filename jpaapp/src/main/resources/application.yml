@@ -16,6 +16,7 @@ spring:
       hibernate:
         #show_sql: true # system.out 출력
         format_sql: true
+        default_batch_fetch_size: 100
 
 logging:
   level:
