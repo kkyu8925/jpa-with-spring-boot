@@ -1,4 +1,4 @@
-package com.example.jpaapp.repository;
+package com.example.jpaapp.repository.order;
 
 import com.example.jpaapp.domain.OrderStatus;
 import lombok.Getter;

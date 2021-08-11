@@ -3,7 +3,7 @@ package com.example.jpaapp.controller;
 import com.example.jpaapp.domain.Member;
 import com.example.jpaapp.domain.Order;
 import com.example.jpaapp.domain.item.Item;
-import com.example.jpaapp.repository.OrderSearch;
+import com.example.jpaapp.repository.order.OrderSearch;
 import com.example.jpaapp.service.ItemService;
 import com.example.jpaapp.service.MemberService;
 import com.example.jpaapp.service.OrderService;
