@@ -1,4 +1,4 @@
-package com.example.jpaapp.repository.order.query;
+package com.example.jpaapp.repository.order.simplequery;
 
 import com.example.jpaapp.domain.Address;
 import com.example.jpaapp.domain.OrderStatus;

@@ -1,7 +1,6 @@
 package com.example.jpaapp.repository.order;
 
 import com.example.jpaapp.domain.Order;
-import com.example.jpaapp.repository.order.query.OrderSimpleQueryDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

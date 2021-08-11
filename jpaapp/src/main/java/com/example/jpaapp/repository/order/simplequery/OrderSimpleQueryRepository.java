@@ -1,4 +1,4 @@
-package com.example.jpaapp.repository.order.query;
+package com.example.jpaapp.repository.order.simplequery;
 
 
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ public class OrderSimpleQueryRepository {
 
     public List<OrderSimpleQueryDTO> findAllOrderDTO() {
         return entityManager.createQuery(
-                "select new com.example.jpaapp.repository.order.query.OrderSimpleQueryDTO(o.id, m.name, o.orderDate, o.status, d.address)" +
+                "select new com.example.jpaapp.repository.order.simplequery.OrderSimpleQueryDTO(o.id, m.name, o.orderDate, o.status, d.address)" +
                         " from Order o" +
                         " join o.member m" +
                         " join o.delivery d", OrderSimpleQueryDTO.class)
