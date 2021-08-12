@@ -9,6 +9,10 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // protected 기본 생성자
 @ToString(of = {"id", "username", "age"})
+// 네임드쿼리는 애플리케이션 로딩시점에 파싱해서 오류가 있으면 알려준다.
+@NamedQuery(
+        name = "Member.findByUsername",
+        query = "select m from Member m where m.username = :username")
 public class Member {
 
     @Id
