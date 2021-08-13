@@ -17,6 +17,10 @@ spring:
         #show_sql: true # system.out 출력
         format_sql: true
         default_batch_fetch_size: 100
+  data:
+    rest:
+      default-page-size: 20 # 기본 페이지 사이즈
+      max-page-size: 3000 # 최대 페이지 사이즈
 
 logging:
   level:
