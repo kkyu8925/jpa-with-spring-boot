@@ -49,6 +49,7 @@ public class Member {
         return team;
     }
 
+    // 연연관관계편의 메서드
     public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);
