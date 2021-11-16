@@ -21,7 +21,7 @@ public class OrderRepository {
         return entityManager.find(Order.class, id);
     }
 
-    public List<Order> findAll(OrderSearch orderSearch) {
+    public List<Order> findAllByString(OrderSearch orderSearch) {
         return entityManager.createQuery("select o from Order o join o.member m" +
                 " where o.status = :status " +
                 " and m.name like :name", Order.class)
@@ -43,6 +43,16 @@ public class OrderRepository {
                 .getResultList();
     }
 
+    public List<Order> findAllWithItem() {
+        return entityManager.createQuery(
+                "select distinct o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d" +
+                        " join fetch o.orderItems oi" + // distinct 없으면 Order 데이터가 OrderItems 개수만큼 조회된다!
+                        " join fetch oi.item i", Order.class)
+                .getResultList();
+    }
+
     public List<Order> findAllWithMemberDelivery(int offset, int limit) {
         return entityManager.createQuery(
                 "select o from Order o" +
@@ -52,23 +62,4 @@ public class OrderRepository {
                 .setMaxResults(limit)
                 .getResultList();
     }
-
-    public List<Order> findAllWithItem() {
-        return entityManager.createQuery(
-                "select distinct o from Order o" +
-                        " join fetch o.member m" +
-                        " join fetch o.delivery d" +
-                        " join fetch o.orderItems oi" +
-                        " join fetch oi.item i", Order.class)
-                .getResultList();
-    }
-
-//    public List<OrderSimpleQueryDTO> findAllOrderDTO() {
-//        return entityManager.createQuery(
-//                "select new com.example.jpaapp.repository.OrderSimpleQueryDTO(o.id, m.name, o.orderDate, o.status, d.address)" +
-//                        " from Order o" +
-//                        " join o.member m" +
-//                        " join o.delivery d", OrderSimpleQueryDTO.class)
-//                .getResultList();
-//    }
 }

@@ -5,6 +5,7 @@ import com.example.jpaapp.domain.Order;
 import com.example.jpaapp.domain.OrderItem;
 import com.example.jpaapp.domain.OrderStatus;
 import com.example.jpaapp.repository.order.OrderRepository;
+import com.example.jpaapp.repository.order.OrderSearch;
 import com.example.jpaapp.repository.order.query.OrderFlatDto;
 import com.example.jpaapp.repository.order.query.OrderItemQueryDto;
 import com.example.jpaapp.repository.order.query.OrderQueryDto;
@@ -48,7 +49,7 @@ public class OrderApiController {
      */
     @GetMapping("/api/v1/orders")
     public List<Order> ordersV1() {
-        List<Order> all = orderRepository.findAll();
+        List<Order> all = orderRepository.findAllByString(new OrderSearch());
         for (Order order : all) {
             order.getMember().getName(); // Lazy 강제 초기화
             order.getDelivery().getAddress(); // Lazy 강제 초기화
@@ -65,7 +66,7 @@ public class OrderApiController {
      */
     @GetMapping("/api/v2/orders")
     public List<OrderDto> ordersV2() {
-        List<Order> orders = orderRepository.findAll();
+        List<Order> orders = orderRepository.findAllByString(new OrderSearch());
         return orders.stream()
 //                .map(o -> new OrderDto(o))
                 .map(OrderDto::new)
@@ -75,7 +76,7 @@ public class OrderApiController {
     /**
      * V3. 엔티티를 조회해서 DTO 변환(fetch join 사용O)
      * 단점
-     * - 컬렉션 페치 조인은 하나만 사용하기!!
+     * - 컬렉션 페치 조인은 하나만 사용하기!! -> 데이터 뻥튀기로 데이터가 부정합하게 조회됨
      * - 데이터 뻥튀기로 페이징 불가능!!! ( 부모 1, 자식 10 이면 10개로 늘어남)
      * - 페이징 시에는 N 부분을 포기해야함(대신에 batch fetch size? 옵션 주면 N -> 1 쿼리로 변경 가능)
      */
@@ -91,7 +92,8 @@ public class OrderApiController {
     /**
      * V3.1 엔티티를 조회해서 DTO 변환 페이징 고려
      * - ToOne 관계만 우선 모두 페치 조인으로 최적화
-     * - 컬렉션 관계는 application.yml hibernate.default_batch_fetch_size, @BatchSize 최적화
+     * - 컬렉션은 지연 로딩으로 조회한다.
+     * - 컬렉션 관계는 application.yml: hibernate.default_batch_fetch_size, @BatchSize 최적화
      * V3 처럼 하나의 쿼리로 가져오지는 않지만 성능+페이징이 가능하다!
      * 또한 쿼리는 조금더 나가지만 데이터베이스에서 애플리케이션으로 가져오는 데이터 전송량이 줄어든다. (뻥튀기 안일어남)
      */
