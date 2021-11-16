@@ -45,6 +45,7 @@ public class OrderService {
         Order order = Order.createOrder(member, delivery, orderItem);
 
         // 주문 저장
+        // cascade = CascadeType.ALL 옵션으로 Delivery, OrderItem 함께 저장
         orderRepository.save(order);
 
         return order.getId();

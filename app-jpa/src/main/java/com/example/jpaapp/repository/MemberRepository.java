@@ -2,6 +2,7 @@ package com.example.jpaapp.repository;
 
 import com.example.jpaapp.domain.Member;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,6 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberRepository {
 
+    // @PersistenceContext
+    // private EntityManager em;
+    // 스프링 data를 통해(@PersistenceContext 말고 @Autowired으로 DI 지원)
+    // +@RequiredArgsConstructor
     private final EntityManager entityManager;
 
     public void save(Member member) {
