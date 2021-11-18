@@ -152,6 +152,9 @@ class MemberRepositoryTest {
         Page<Member> page = memberRepository.findByAge(age, pageRequest);
 //        Slice<Member> slicePage = memberRepository.findByAge(age, pageRequest);
 
+        // response 반환 시
+        Page<MemberDto> map = page.map(m -> new MemberDto(m.getId(), m.getUsername(), null));
+
         // then
         List<Member> content = page.getContent();
         long totalElements = page.getTotalElements();

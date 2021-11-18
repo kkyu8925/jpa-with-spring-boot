@@ -9,9 +9,10 @@ import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
-@EntityListeners(AuditingEntityListener.class)
-@MappedSuperclass
+// study.datajpa.DataJpaApplication 빈추가
 @Getter
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public class BaseEntity extends BaseTimeEntity {
 
     @CreatedBy

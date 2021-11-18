@@ -17,6 +17,8 @@ public class DataJpaApplication {
         SpringApplication.run(DataJpaApplication.class, args);
     }
 
+
+    // study.datajpa.entity.BaseEntity -> @CreatedBy, @LastModifiedBy
     @Bean
     public AuditorAware<String> auditorProvider() {
         return () -> Optional.of(UUID.randomUUID().toString());

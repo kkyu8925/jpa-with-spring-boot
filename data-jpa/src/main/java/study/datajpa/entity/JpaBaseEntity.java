@@ -8,6 +8,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
+// 순수 jpa auditing
 @MappedSuperclass
 @Getter
 public class JpaBaseEntity {
