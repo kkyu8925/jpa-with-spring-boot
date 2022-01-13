@@ -1,6 +1,6 @@
 package 실전예제5_연관관계_관리;
 
-import jpa.book.shop5_연관관계_관리.domain.Book;
+import 실전예제5_연관관계_관리.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

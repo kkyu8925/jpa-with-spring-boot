@@ -1,7 +1,7 @@
 package 실전예제3_다양한_연관관계_매핑;
 
-import jpa.book.shop2_연관관계_매핑.domain.Order;
-import jpa.book.shop2_연관관계_매핑.domain.OrderItem;
+import 실전예제3_다양한_연관관계_매핑.domain.Order;
+import 실전예제3_다양한_연관관계_매핑.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

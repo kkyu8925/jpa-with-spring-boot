@@ -1,6 +1,6 @@
 package 실전예제4_상속관계_매핑;
 
-import jpa.book.shop4_상속관계_매핑.domain.Book;
+import 실전예제4_상속관계_매핑.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

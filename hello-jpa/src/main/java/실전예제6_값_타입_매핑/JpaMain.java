@@ -1,6 +1,6 @@
 package 실전예제6_값_타입_매핑;
 
-import jpa.book.shop6_값_타입_매핑.domain.Book;
+import 실전예제6_값_타입_매핑.domain.Book;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
