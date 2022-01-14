@@ -1,12 +1,15 @@
-package 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑;
+// 가급적 지연 로딩만 사용(특히 실무에서) - FetchType.LAZY
+// 즉시 로딩을 적용하면 예상하지 못한 SQL 발생
+// 즉시 로딩은 JPQL 에서 N+1 문제를 일으킨다.
+package 섹션8_프로시와_연관관계_관리.domain;
+
+import 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑.domain.Locker;
 
 import javax.persistence.*;
 
-@Entity // JPA 가 객체를 관리
 // final 클래스, enum, interface, inner 클래스 사용X
-//@Table(name="MBA")
+@Entity // JPA 가 객체를 관리
 public class Member {
-    //  저장할 필드에 final 사용X
 
     @Id // pk 매핑, 직접 할당 시 @Id 만 사용
     @GeneratedValue(strategy = GenerationType.AUTO) // 자동 할당
@@ -21,7 +24,7 @@ public class Member {
 
     // 연관관계 주인
     // 외래키 관리(등록, 수정)
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) // 프록시 객체로 받음
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
@@ -49,7 +52,6 @@ public class Member {
         return team;
     }
 
-    // 연연관관계편의 메서드
     public void changeTeam(Team team) {
         this.team = team;
         team.getMembers().add(this);

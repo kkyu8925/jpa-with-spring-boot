@@ -1,4 +1,4 @@
-package 섹션7_고급매핑;
+package 섹션7_고급매핑.domain;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

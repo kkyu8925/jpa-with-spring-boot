@@ -1,5 +1,7 @@
 package 섹션3_영속성관리_섹션4_엔티티매핑;
 
+import 섹션3_영속성관리_섹션4_엔티티매핑.domain.Member;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

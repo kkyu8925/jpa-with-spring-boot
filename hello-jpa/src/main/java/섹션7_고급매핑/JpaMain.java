@@ -1,5 +1,7 @@
 package 섹션7_고급매핑;
 
+import 섹션7_고급매핑.domain.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

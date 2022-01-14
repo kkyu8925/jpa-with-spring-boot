@@ -1,11 +1,13 @@
-package 섹션7_고급매핑;
+package 섹션7_고급매핑.domain;
+
+import 섹션7_고급매핑.domain.Item;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("M")
-public class Movie extends Item{
+public class Movie extends Item {
 
     private String director;
     private String actor;

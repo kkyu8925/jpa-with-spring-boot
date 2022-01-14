@@ -10,6 +10,9 @@
 // 프록시는 영속성 컨텍스트를 통하여 초기화한다 > 오류 조심
 package 섹션8_프로시와_연관관계_관리;
 
+import 섹션8_프로시와_연관관계_관리.domain.Child;
+import 섹션8_프로시와_연관관계_관리.domain.Parent;
+
 import javax.persistence.*;
 
 public class JpaMainCASCADE {

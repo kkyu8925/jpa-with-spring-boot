@@ -1,13 +1,13 @@
-package 섹션3_영속성관리_섹션4_엔티티매핑;
+package 섹션3_영속성관리_섹션4_엔티티매핑.domain;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-//@Entity // JPA 가 객체를 관리
 // final 클래스, enum, interface, inner 클래스 사용X
-//@Table(name="MBA")
+@Entity // JPA 가 객체를 관리
+@Table(name = "MBA")
 public class Member {
     //  저장할 필드에 final 사용X
 

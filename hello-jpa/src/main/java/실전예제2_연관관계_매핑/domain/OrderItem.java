@@ -2,7 +2,7 @@ package 실전예제2_연관관계_매핑.domain;
 
 import javax.persistence.*;
 
-//@Entity
+@Entity
 public class OrderItem {
 
     @Id

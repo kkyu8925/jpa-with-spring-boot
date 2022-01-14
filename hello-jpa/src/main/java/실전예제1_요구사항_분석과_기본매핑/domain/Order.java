@@ -3,8 +3,8 @@ package 실전예제1_요구사항_분석과_기본매핑.domain;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-//@Entity
-//@Table(name = "ORDERS")
+@Entity
+@Table(name = "ORDERS")
 public class Order {
 
     @Id

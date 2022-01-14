@@ -10,6 +10,9 @@
 // 프록시는 영속성 컨텍스트를 통하여 초기화한다 > 오류 조심
 package 섹션9_값타입;
 
+import 섹션9_값타입.domain.Address;
+import 섹션9_값타입.domain.Member;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

@@ -1,4 +1,4 @@
-package 섹션9_값타입;
+package 섹션9_값타입.domain;
 
 import javax.persistence.Embeddable;
 import java.util.Objects;

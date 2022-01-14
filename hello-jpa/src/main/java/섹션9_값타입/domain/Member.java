@@ -1,7 +1,7 @@
 // 가급적 지연 로딩만 사용(특히 실무에서) - FetchType.LAZY
 // 즉시 로딩을 적용하면 예상하지 못한 SQL 발생
 // 즉시 로딩은 JPQL 에서 N+1 문제를 일으킨다.
-package 섹션9_값타입;
+package 섹션9_값타입.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,11 +9,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Entity // JPA 가 객체를 관리
 // final 클래스, enum, interface, inner 클래스 사용X
-//@Table(name="MBA")
+@Entity // JPA 가 객체를 관리
 public class Member {
-    //  저장할 필드에 final 사용X
 
     @Id // pk 매핑, 직접 할당 시 @Id 만 사용
     @GeneratedValue(strategy = GenerationType.AUTO) // 자동 할당
@@ -34,29 +32,18 @@ public class Member {
     // 실무애서는 값 타입 컬렉션 대신에 일대다 관계 사용
     // 수정이 일어나면 모든 값을 지우고 다시 넣음
     @ElementCollection
-    @CollectionTable(name = "FAVORITE_FOODS", joinColumns =
-    @JoinColumn(name = "MEMBER_ID")
-    )
+    @CollectionTable(name = "FAVORITE_FOODS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     @Column(name = "FOOD_NAME")
     private Set<String> favoriteFoods = new HashSet<>();
 
     // 실무애서는 값 타입 컬렉션 대신에 일대다 관계 사용
     // 수정이 일어나면 모든 값을 지우고 다시 넣음
     @ElementCollection
-    @CollectionTable(name = "ADDRESS", joinColumns =
-    @JoinColumn(name = "MEMBER_ID")
-    )
+    @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     private List<Address> addressHistory = new ArrayList<>();
 
     @Embedded
-    @AttributeOverrides({
-            @AttributeOverride(name = "city",
-                    column = @Column(name = "WORK_CITY")),
-            @AttributeOverride(name = "street",
-                    column = @Column(name = "WORK_STREET")),
-            @AttributeOverride(name = "zipcode",
-                    column = @Column(name = "WORK_ZIPCODE")),
-    })
+    @AttributeOverrides({@AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")), @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")), @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE")),})
     private Address workAddress;
 
     public Long getId() {

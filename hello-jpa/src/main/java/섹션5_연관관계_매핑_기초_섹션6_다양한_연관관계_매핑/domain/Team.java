@@ -1,4 +1,4 @@
-package 섹션8_프로시와_연관관계_관리;
+package 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;

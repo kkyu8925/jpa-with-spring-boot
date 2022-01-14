@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Entity
-//@Table(name = "ORDERS")
+@Entity
+@Table(name = "ORDERS")
 public class Order {
 
     @Id

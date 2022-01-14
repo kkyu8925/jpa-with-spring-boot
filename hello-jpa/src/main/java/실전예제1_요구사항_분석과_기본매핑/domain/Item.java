@@ -1,10 +1,11 @@
 package 실전예제1_요구사항_분석과_기본매핑.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-//@Entity
+@Entity
 public class Item {
 
     @Id

@@ -1,5 +1,8 @@
 package 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑;
 
+import 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑.domain.Member;
+import 섹션5_연관관계_매핑_기초_섹션6_다양한_연관관계_매핑.domain.Team;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

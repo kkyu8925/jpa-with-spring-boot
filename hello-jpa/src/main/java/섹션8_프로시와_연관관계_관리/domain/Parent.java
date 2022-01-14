@@ -1,4 +1,6 @@
-package 섹션8_프로시와_연관관계_관리;
+package 섹션8_프로시와_연관관계_관리.domain;
+
+import 섹션8_프로시와_연관관계_관리.domain.Child;
 
 import javax.persistence.*;
 import java.util.ArrayList;
