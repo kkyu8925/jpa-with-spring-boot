@@ -29,6 +29,15 @@ public class Member {
     @Embedded
     private Address homeAddress;
 
+    // 주소
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workAddress;
+
     // 실무애서는 값 타입 컬렉션 대신에 일대다 관계 사용
     // 수정이 일어나면 모든 값을 지우고 다시 넣음
     @ElementCollection
@@ -41,10 +50,6 @@ public class Member {
     @ElementCollection
     @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
     private List<Address> addressHistory = new ArrayList<>();
-
-    @Embedded
-    @AttributeOverrides({@AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")), @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")), @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE")),})
-    private Address workAddress;
 
     public Long getId() {
         return id;

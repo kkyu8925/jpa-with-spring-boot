@@ -1,5 +1,6 @@
 package 섹션9_값타입.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.util.Objects;
 
@@ -9,6 +10,7 @@ public class Address {
 
     private String city;
     private String street;
+    @Column(name = "ZIPCODE")
     private String zipcode;
 
     // 기본 생성자 필수
