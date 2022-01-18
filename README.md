@@ -1,10 +1,10 @@
-# jpa
+# [인프런] 김영한의 스프링 부트와 JPA 실무 완전 정복 로드맵
 
+- README : 강의 정리
 - app-jpa : 실전! 스프링 부트와 JPA 활용1, 2 - 개발 & 성능 최적화
 - data-jpa :
 - hello-jpa : 자바 ORM 표준 JPA 프로그래밍 - 기본편
 - querydsl :
-- README : 강의 정리
 
 ### 1. 자바 ORM 표준 JPA 프로그래밍 - 기본편
 
