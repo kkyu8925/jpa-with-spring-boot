@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "order_item")
 @Getter
-@Setter(value = AccessLevel.PRIVATE)
+@Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
