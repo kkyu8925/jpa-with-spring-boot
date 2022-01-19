@@ -1,5 +1,3 @@
-- <a href="https://github.com/kkyu8925/jpa-with-spring-boot">홈</a>
-
 ### SQL 중심적인 개발의 문제점
 
 - CRUD 반복적인 코드

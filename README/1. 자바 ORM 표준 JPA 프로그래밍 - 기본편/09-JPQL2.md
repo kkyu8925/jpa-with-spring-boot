@@ -1,5 +1,3 @@
-- <a href="https://github.com/kkyu8925/jpa-with-spring-boot">홈</a>
-
 ### 페치 조인(fetch join)
 
 - SQL 조인 종류X

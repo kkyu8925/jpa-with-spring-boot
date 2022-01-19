@@ -68,7 +68,6 @@ public class OrderApiController {
     public List<OrderDto> ordersV2() {
         List<Order> orders = orderRepository.findAllByString(new OrderSearch());
         return orders.stream()
-//                .map(o -> new OrderDto(o))
                 .map(OrderDto::new)
                 .collect(toList());
     }
@@ -84,7 +83,6 @@ public class OrderApiController {
     public List<OrderDto> ordersV3() {
         List<Order> orders = orderRepository.findAllWithItem();
         return orders.stream()
-//                .map(o -> new OrderDto(o))
                 .map(OrderDto::new)
                 .collect(toList());
     }
@@ -98,11 +96,9 @@ public class OrderApiController {
      * 또한 쿼리는 조금더 나가지만 데이터베이스에서 애플리케이션으로 가져오는 데이터 전송량이 줄어든다. (뻥튀기 안일어남)
      */
     @GetMapping("/api/v3.1/orders")
-    public List<OrderDto> ordersV3_page(@RequestParam(value = "offset", defaultValue = "0") int offset,
-                                        @RequestParam(value = "limit", defaultValue = "100") int limit) {
+    public List<OrderDto> ordersV3_page(@RequestParam(value = "offset", defaultValue = "0") int offset, @RequestParam(value = "limit", defaultValue = "100") int limit) {
         List<Order> orders = orderRepository.findAllWithMemberDelivery(offset, limit);
         return orders.stream()
-//                .map(o -> new OrderDto(o))
                 .map(OrderDto::new)
                 .collect(toList());
     }
@@ -135,14 +131,10 @@ public class OrderApiController {
         List<OrderFlatDto> flats = orderQueryRepository.findAllByDto_flat();
 
         return flats.stream()
-                .collect(groupingBy(o -> new OrderQueryDto(o.getOrderId(),
-                                o.getName(), o.getOrderDate(), o.getOrderStatus(), o.getAddress()),
-                        mapping(o -> new OrderItemQueryDto(o.getOrderId(),
-                                o.getItemName(), o.getOrderPrice(), o.getCount()), toList())
+                .collect(groupingBy(o -> new OrderQueryDto(o.getOrderId(), o.getName(), o.getOrderDate(), o.getOrderStatus(), o.getAddress()),
+                        mapping(o -> new OrderItemQueryDto(o.getOrderId(), o.getItemName(), o.getOrderPrice(), o.getCount()), toList())
                 )).entrySet().stream()
-                .map(e -> new OrderQueryDto(e.getKey().getOrderId(),
-                        e.getKey().getName(), e.getKey().getOrderDate(), e.getKey().getOrderStatus(),
-                        e.getKey().getAddress(), e.getValue()))
+                .map(e -> new OrderQueryDto(e.getKey().getOrderId(), e.getKey().getName(), e.getKey().getOrderDate(), e.getKey().getOrderStatus(), e.getKey().getAddress(), e.getValue()))
                 .collect(toList());
     }
 
@@ -163,7 +155,6 @@ public class OrderApiController {
             this.orderStatus = order.getStatus();
             this.address = order.getDelivery().getAddress();
             this.orderItems = order.getOrderItems().stream()
-//                    .map(orderItem -> new OrderItemDto(orderItem))
                     .map(OrderItemDto::new)
                     .collect(toList());
         }

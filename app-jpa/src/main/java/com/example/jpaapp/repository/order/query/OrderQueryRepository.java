@@ -80,7 +80,6 @@ public class OrderQueryRepository {
      */
     private List<Long> toOrderIds(List<OrderQueryDto> result) {
         return result.stream()
-//                .map(o -> o.getOrderId())
                 .map(OrderQueryDto::getOrderId)
                 .collect(Collectors.toList());
     }

@@ -1,11 +1,9 @@
-- <a href="https://github.com/kkyu8925/jpa-with-spring-boot">홈</a>
 - Open Session In View: 하이버네이트
 - Open EntityManager In View: JPA (관례상 OSIV이라 한다.)
 
 ### OSIV ON
 
-<img src="img/OSIV-true.png" alt="OSIV ON"/>
-<br/>
+![image](https://user-images.githubusercontent.com/64997245/150077385-4bcb69c5-396d-4c69-a66f-c087c7345f49.png)
 
 - spring.jpa.open-in-view: true (default)
 
@@ -24,8 +22,7 @@ OSIV 전략은 트랜잭션 시작처럼 최초 데이터베이스 커넥션 시
 
 ### OSIV OFF
 
-<img src="img/OSIV-false.png" alt="OSIV OFF"/>
-<br/>
+![image](https://user-images.githubusercontent.com/64997245/150077454-077e25c1-95da-49ab-903f-b8e45ad99c5c.png)
 
 - spring.jpa.open-in-view: false
 
