@@ -1,12 +1,10 @@
 # 실전! 스프링 부트와 JPA 활용2 - API 개발과 성능 최적화
 
-<a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/MemberApiController.java">
-API 개발 기본 - MemberApiController 소스코드</a>
-<br/>
-
-<a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/OrderSimpleApiController.java">
-API 개발 고급 : 지연 로딩과 조회 성능 최적화 - OrderSimpleApiController 소스코드</a>
-<br/>
+- <a href="https://github.com/kkyu8925/jpa-with-spring-boot">홈</a>
+- <a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/MemberApiController.java">
+  API 개발 기본 - MemberApiController 소스코드</a>
+- <a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/OrderSimpleApiController.java">
+  API 개발 고급 : 지연 로딩과 조회 성능 최적화 - OrderSimpleApiController 소스코드</a>
 
 ```text
 *권장 순서
@@ -16,8 +14,8 @@ API 개발 고급 : 지연 로딩과 조회 성능 최적화 - OrderSimpleApiCon
 - 최후의 방법은 JPA가 제공하는 네이티브 SQL이나 스프링 JDBC Template을 사용해서 SQL을 직접 사용한다.
 ```
 
-<a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/OrderApiController.java">
-API 개발 고급 : 컬렉션 조회 최적화 - OrderApiController 소스코드</a><br/>
+- <a href="https://github.com/kkyu8925/jpa-with-spring-boot/blob/main/app-jpa/src/main/java/com/example/jpaapp/api/OrderApiController.java">
+  API 개발 고급 : 컬렉션 조회 최적화 - OrderApiController 소스코드</a>
 
 ```text
 *권장 순서

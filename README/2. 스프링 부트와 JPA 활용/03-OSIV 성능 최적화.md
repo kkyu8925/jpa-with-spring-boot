@@ -1,3 +1,4 @@
+- <a href="https://github.com/kkyu8925/jpa-with-spring-boot">홈</a>
 - Open Session In View: 하이버네이트
 - Open EntityManager In View: JPA (관례상 OSIV이라 한다.)
 
