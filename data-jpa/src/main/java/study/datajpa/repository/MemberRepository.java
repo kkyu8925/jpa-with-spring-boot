@@ -11,6 +11,7 @@ import javax.persistence.LockModeType;
 import javax.persistence.QueryHint;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Long>, MemberRepositoryCustom {
 
@@ -36,6 +37,15 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     @Query("select m from Member m where m.username in :names")
     List<Member> findByNames(@Param("names") Collection<String> names);
 
+    // 반환 타입 - collection
+    List<Member> findListByUsername(String username);
+
+    // 반환 타입 - 단건
+    Member findMemberByUsername(String username);
+
+    // 반환 타입 - Optional<>
+    Optional<Member> findOptionalByUsername(String username);
+
 //    Page<Member> findByAge(int age, Pageable pageable);
 
     // 카운터 쿼리가 조인으로 복잡해지면 성능이 안나온다.
@@ -44,13 +54,13 @@ public interface MemberRepository extends JpaRepository<Member, Long>, MemberRep
     @Query(countQuery = "select count(m) from Member m")
     Page<Member> findByAge(int age, Pageable pageable);
 
+    // 벌크 쿼리리
     @Modifying(clearAutomatically = true) // 필수
     @Query("update Member m set m.age = m.age + 1 where m.age >= :age")
     int bulkAgePlus(@Param("age") int age);
 
-    // fetch join
     @Override
-    @EntityGraph(attributePaths = {"team"})
+    @EntityGraph(attributePaths = {"team"}) // fetch join
     List<Member> findAll();
 
     @QueryHints(value = @QueryHint(name = "org.hibernate.readOnly", value = "true"))
